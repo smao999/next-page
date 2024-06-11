@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 
-const isGithubActions = process.env.GITHUB_ACTIONS || false;
+const isProd = process.env.NODE_ENV === "production";
 // const repo = 'next-page'
 let assetPrefix = '';
 let basePath = '';
 
-if(isGithubActions) {
+if(isProd) {
     const repo = 'next-page';
     assetPrefix = `/${repo}/`;
     basePath = `/${repo}`;
