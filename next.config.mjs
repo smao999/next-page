@@ -1,21 +1,21 @@
 /** @type {import('next').NextConfig} */
 
-const isProd = process.env.NODE_ENV === "production";
-// const repo = 'next-page'
-let assetPrefix = '';
-let basePath = '';
+const isGithubActions = process.env.GITHUB_ACTIONS || false;
+let assetPrefix = "";
+let basePath = "";
 
-if(isProd) {
-    const repo = 'next-page';
-    assetPrefix = `/${repo}/`;
-    basePath = `/${repo}`;
+if (isGithubActions) {
+  // 去掉 `<owner>/`
+  const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, "");
+
+  assetPrefix = `/${repo}/`;
+  basePath = `/${repo}`;
 }
 
 const nextConfig = {
-    assetPrefix,
-    basePath: isProd ? "/next-page" : "",
-    output: 'export',
-    distDir: "docs"
+  basePath,
+  assetPrefix,
+  output: "export",
 };
 
-export default nextConfig;
+module.exports = nextConfig;
