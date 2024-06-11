@@ -6,14 +6,14 @@ let assetPrefix = '';
 let basePath = '';
 
 if(isProd) {
-    const repo = 'docs';
-    assetPrefix = `/${repo}/`;
+    const repo = 'next-page';
+    // assetPrefix = `/${repo}/`;
     basePath = `/${repo}`;
 }
 
 const nextConfig = {
-    assetPrefix,
-    basePath,
+    // assetPrefix,
+    basePath: isProd ? "/next-page" : "",
     output: 'export',
     distDir: "docs"
 };
