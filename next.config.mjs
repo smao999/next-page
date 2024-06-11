@@ -6,7 +6,7 @@ let assetPrefix = '';
 let basePath = '';
 
 if(isProd) {
-    const repo = 'next-page/docs';
+    const repo = 'docs';
     assetPrefix = `/${repo}/`;
     basePath = `/${repo}`;
 }
