@@ -7,12 +7,12 @@ let basePath = '';
 
 if(isProd) {
     const repo = 'next-page';
-    // assetPrefix = `/${repo}/`;
+    assetPrefix = `/${repo}/`;
     basePath = `/${repo}`;
 }
 
 const nextConfig = {
-    // assetPrefix,
+    assetPrefix,
     basePath: isProd ? "/next-page" : "",
     output: 'export',
     distDir: "docs"
