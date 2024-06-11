@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 20
       - name: 安装 Pnpm 🧬
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         id: pnpm-install
         with:
           version: 7
