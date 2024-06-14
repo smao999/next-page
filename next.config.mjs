@@ -15,7 +15,9 @@ if (isGithubActions) {
 const nextConfig = {
   basePath,
   assetPrefix,
-  output: "export",
+  output: {
+    globalObject: 'this'
+  },
 };
 
 export default nextConfig
