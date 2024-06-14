@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 
+const { Worker } = require("node:worker_threads");
 const isGithubActions = process.env.GITHUB_ACTIONS || false;
 let assetPrefix = "";
 let basePath = "";
