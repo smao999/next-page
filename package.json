@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "@webav/av-cliper": "^0.10.0",
+    "@zeit/next-workers": "^1.0.0",
     "antd": "^5.18.1",
     "next": "14.2.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "worker-loader": "^3.0.8"
   },
   "devDependencies": {
     "@types/node": "^20",

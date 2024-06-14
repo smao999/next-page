@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 
+import { webpack } from 'next/dist/compiled/webpack/webpack';
+
 const isGithubActions = process.env.GITHUB_ACTIONS || false;
 let assetPrefix = "";
 let basePath = "";
@@ -16,6 +18,19 @@ const nextConfig = {
   basePath,
   assetPrefix,
   output: "export",
+  webpack: config => {
+    config.module.rules.push({
+      test: /\.worker\.js$/,
+      loader: 'worker-loader',
+      options: {
+        name: 'static/[hash].worker.js',
+        publicPath: '/_next/'
+      }
+    })
+    // Overcome Webpack referencing `window` in chunks
+    config.output.globalObject = `(typeof self !== 'undefined' ? self : this)`
+    return config
+  }
 };
 
 export default nextConfig
