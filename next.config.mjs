@@ -1,7 +1,5 @@
 /** @type {import('next').NextConfig} */
 
-import { webpack } from 'next/dist/compiled/webpack/webpack';
-
 const isGithubActions = process.env.GITHUB_ACTIONS || false;
 let assetPrefix = "";
 let basePath = "";
