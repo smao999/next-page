@@ -22,10 +22,10 @@ jobs:
           version: 8
           run_install: true
       - name: 安装依赖 ⚙️
-        run: pnpm install
+        run: npm install
       - name: 打包 🏗️
         run: |
-          pnpm build
+          npm build
           touch out/.nojekyll
       - name: 部署 🚀
         uses: JamesIves/github-pages-deploy-action@v4
